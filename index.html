@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM LORDYT - Profile & Unlocker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f12;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff0055, #7000ff);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255, 0, 85, 0.4);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            font-size: 1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1a1a24;
+            border: 1px solid #2a2a3a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #ff0055;
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            color: #ff0055;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .skills-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: #7000ff;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #ff0055, #7000ff);
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(112, 0, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn:disabled {
+            background: #444455;
+            box-shadow: none;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn-yt {
+            background: #ff0000;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .btn-tg {
+            background: #0088cc;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <h1>GM LORDYT</h1>
+            <p class="subtitle">BCA Student | Gamer | Future Web Developer</p>
+        </header>
+
+        <!-- ================= PAGE 1: PROFILE ================= -->
+        <div id="page1" class="page active-page">
+            <div class="card">
+                <h2>About Me</h2>
+                <p>Main ek BCA student hoon aur gaming + coding me interest rakhta hoon. Abhi main Web Development seekh raha hoon aur apni coding skills ko next level par le jane ki koshish kar raha hoon.</p>
+            </div>
+
+            <div class="card">
+                <h2>My Skills & Learning</h2>
+                <div class="skills-list">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Free Fire Gaming</span>
+                    <span class="tag">BCA First Year</span>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h2>File Download Section</h2>
+                <p>File download karne ke liye niche Continue button par click karein:</p>
+                <button class="btn" onclick="showPage('page2')">Continue to Unlock Link ➔</button>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: SUB2UNLOCK ================= -->
+        <div id="page2" class="page">
+            <div class="card" style="text-align: center;">
+                <h2>Complete Steps to Unlock</h2>
+                <p>Download link unlock karne ke liye niche diye gaye steps complete karein:</p>
+                
+                <!-- YouTube Link -->
+                <a href="https://youtube.com/@gaminglord036?si=zJ2wcmvgpnxM-Z7v" target="_blank" class="btn btn-yt" onclick="stepCompleted(1)">
+                    1. Subscribe YouTube Channel 🔔
+                </a>
+
+                <!-- Telegram Link -->
+                <a href="https://t.me/GamingLord036" target="_blank" class="btn btn-tg" onclick="stepCompleted(2)">
+                    2. Join Telegram Channel ✈️
+                </a>
+
+                <button id="unlockBtn" class="btn" disabled onclick="showPage('page3')">
+                    🔒 Link Locked (Complete Steps First)
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 3: DOWNLOAD ================= -->
+        <div id="page3" class="page">
+            <div class="card" style="text-align: center;">
+                <h2>🎉 Link Unlocked!</h2>
+                <p>Aapki file ready hai. Download karne ke liye niche click karein:</p>
+                
+                <!-- 📥 DOWNLOAD LINK YAHAN CHANGE HOGA (Niche diye instructions padhein) -->
+                <a href="YAHAN_APNA_NEW_DOWNLOAD_LINK_DAAL_DENA" target="_blank" class="btn" style="background: #00e676; box-shadow: 0 4px 15px rgba(0,230,118,0.4);">
+                    📥 Download File Now
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 GM LORDYT. Designed with HTML, CSS & JS.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        let step1 = false;
+        let step2 = false;
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
+            document.getElementById(pageId).classList.add('active-page');
+            window.scrollTo(0, 0);
+        }
+
+        function stepCompleted(stepNumber) {
+            if (stepNumber === 1) step1 = true;
+            if (stepNumber === 2) step2 = true;
+
+            if (step1 && step2) {
+                const unlockBtn = document.getElementById('unlockBtn');
+                unlockBtn.disabled = false;
+                unlockBtn.innerText = "🔓 Unlock Link (Get File)";
+                unlockBtn.style.background = "linear-gradient(90deg, #00c853, #b2ff59)";
+                unlockBtn.style.color = "#000";
+            }
+        }
+    </script>
+
+</body>
+</html>
